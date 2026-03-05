@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Weekend Budget Planner</title>
+    <meta name="description" content="Plan your perfect weekend without breaking the bank.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="header-logo-container">
+                <img src="logo.png" alt="App Logo" class="header-logo">
+            </div>
+            <h1>Weekend <span class="gradient-text">Planner</span></h1>
+            <p>Design your perfect weekend without breaking the bank.</p>
+        </header>
+
+        <main>
+            <!-- Setup Section -->
+            <section class="card setup-section" id="setupSection">
+                <div class="form-group">
+                    <label for="budget">What is your total budget?</label>
+                    <div class="input-wrapper">
+                        <span class="currency">₹</span>
+                        <input type="number" id="budget" placeholder="e.g. 5000" min="1" step="1">
+                    </div>
+                </div>
+
+                <div class="form-group preferences-group">
+                    <label>Select your preferred activities:</label>
+                    <div class="chips-container">
+                        <label class="chip">
+                            <input type="checkbox" value="restaurant" class="pref-checkbox">
+                            <span class="chip-content">🍽️ Dining</span>
+                        </label>
+                        <label class="chip">
+                            <input type="checkbox" value="movies" class="pref-checkbox">
+                            <span class="chip-content">🍿 Entertainment</span>
+                        </label>
+                        <label class="chip">
+                            <input type="checkbox" value="trip" class="pref-checkbox">
+                            <span class="chip-content">🚗 small trip</span>
+                        </label>
+                        <label class="chip">
+                            <input type="checkbox" value="shopping" class="pref-checkbox">
+                            <span class="chip-content">🛍️ Shopping</span>
+                        </label>
+                        <label class="chip">
+                            <input type="checkbox" value="nightlife" class="pref-checkbox">
+                            <span class="chip-content">🍸 Nightlife</span>
+                        </label>
+                    </div>
+                    <p class="hint-text">If none are selected, we'll surprise you with everything!</p>
+                </div>
+
+                <button class="btn-primary" id="generateBtn">
+                    <span>Generate My Itinerary</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section hidden" id="resultsSection">
+                <div class="summary-cards">
+                    <div class="summary-card budget-total">
+                        <h3>Total Budget</h3>
+                        <p id="totalBudgetDisplay">₹0</p>
+                    </div>
+                    <div class="summary-card budget-spent">
+                        <h3>Estimated Cost</h3>
+                        <p id="totalSpentDisplay">₹0</p>
+                    </div>
+                    <div class="summary-card budget-remains">
+                        <h3>Remaining</h3>
+                        <p id="totalRemainingDisplay">₹0</p>
+                    </div>
+                </div>
+
+                <div class="itinerary-header">
+                    <h2>Your Perfect Weekend</h2>
+                </div>
+
+                <div class="itinerary-container" id="itineraryContainer">
+                    <!-- Activities will be injected via JS -->
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-secondary" id="replanBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        Start Over
+                    </button>
+                    <button class="btn-primary" id="reshuffleBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-9.21l-5.42 5.42" />
+                        </svg>
+                        Reshuffle Ideas
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
